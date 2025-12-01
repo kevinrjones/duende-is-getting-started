@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inmemory", "inmemory\inmemo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weatherapi", "weatherapi\weatherapi.csproj", "{C307A6CF-58AD-40D8-8283-2FB696F90B85}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherMVC", "WeatherMVC\WeatherMVC.csproj", "{AA9DC36C-0917-49E2-BF4B-7E69AACC9525}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{C307A6CF-58AD-40D8-8283-2FB696F90B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C307A6CF-58AD-40D8-8283-2FB696F90B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C307A6CF-58AD-40D8-8283-2FB696F90B85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA9DC36C-0917-49E2-BF4B-7E69AACC9525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA9DC36C-0917-49E2-BF4B-7E69AACC9525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA9DC36C-0917-49E2-BF4B-7E69AACC9525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA9DC36C-0917-49E2-BF4B-7E69AACC9525}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
