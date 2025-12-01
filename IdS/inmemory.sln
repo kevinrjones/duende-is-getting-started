@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inmemory", "inmemory\inmemory.csproj", "{A607515C-0649-422F-92D8-41A8A3BFF079}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weatherapi", "weatherapi\weatherapi.csproj", "{C307A6CF-58AD-40D8-8283-2FB696F90B85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{A607515C-0649-422F-92D8-41A8A3BFF079}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A607515C-0649-422F-92D8-41A8A3BFF079}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A607515C-0649-422F-92D8-41A8A3BFF079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C307A6CF-58AD-40D8-8283-2FB696F90B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C307A6CF-58AD-40D8-8283-2FB696F90B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C307A6CF-58AD-40D8-8283-2FB696F90B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C307A6CF-58AD-40D8-8283-2FB696F90B85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
