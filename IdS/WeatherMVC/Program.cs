@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using WeatherMVC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +8,25 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<ITokenService, TokenService>();
 builder.Services.Configure<IdentityServerSettings>(builder.Configuration.GetSection("IdentityServerSettings"));
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+}).AddCookie()
+.AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, options =>
+{
+    options.Authority = builder.Configuration["InteractiveServiceSettings:AuthorityUrl"];
+    options.ClientId = builder.Configuration["InteractiveServiceSettings:ClientId"];
+    options.ClientSecret = builder.Configuration["InteractiveServiceSettings:ClientSecret"];
+
+    options.ResponseType = "code";
+    options.UsePkce = true;
+    options.ResponseMode = "query";
+    
+    options.SaveTokens = true;
+    options.Scope.Add(builder.Configuration["InteractiveServiceSettings:Scopes:0"]);
+});
 
 var app = builder.Build();
 
@@ -20,6 +41,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();

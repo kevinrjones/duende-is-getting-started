@@ -1,5 +1,7 @@
 using System.Diagnostics;
 using Duende.IdentityModel.Client;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using WeatherMVC.Models;
@@ -19,12 +21,15 @@ public class HomeController(ITokenService tokenService) : Controller
         return View();
     }
 
+    [Authorize]
     public async Task<IActionResult> Weather()
     {
         using var client = new HttpClient();
-        var token = await tokenService.GetToken("weatherapi.read");
+        // var token = await tokenService.GetToken("weatherapi.read");
+
+        var token = await HttpContext.GetTokenAsync("access_token");
         
-        client.SetBearerToken(token.AccessToken);
+        client.SetBearerToken(token);
         
         var result = await client.GetAsync("https://localhost:5445/weatherforecast");
 
